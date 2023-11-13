@@ -1,3 +1,10 @@
-npm i express nodemon
+npm i express nodemon dotenv mongoose
 set nodemon in package and set es style code
   "type": "module"
+
+set env
+MONGO="mongodb+srv://zefidarmawan:<password>@cluster0.1zalhxo.mongodb.net/?retryWrites=true&w=majority"
+// edit tambahkan password user, set dimongoose port 0.0.0.0 dan set database mernestate
+MONGO="mongodb+srv://zefidarmawan:9OGNLNJtq6uHD6FS@cluster0.1zalhxo.mongodb.net/mernestate?retryWrites=true&w=majority"
+
+- npm i jsonwebtoken

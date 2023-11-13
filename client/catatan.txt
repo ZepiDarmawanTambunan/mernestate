@@ -1,0 +1,2 @@
+- set vite.config.js
+- npm i @reduxjs/toolkit react-redux
