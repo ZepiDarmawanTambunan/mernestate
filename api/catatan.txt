@@ -8,3 +8,21 @@ MONGO="mongodb+srv://zefidarmawan:<password>@cluster0.1zalhxo.mongodb.net/?retry
 MONGO="mongodb+srv://zefidarmawan:9OGNLNJtq6uHD6FS@cluster0.1zalhxo.mongodb.net/mernestate?retryWrites=true&w=majority"
 
 - npm i jsonwebtoken
+
+- next(error);
+digunakan untuk mengirim error ke index.js agar ditangani cukup satu method handle error
+
+- authController.google
+login dibe menggunakan mongodb tapi disisi fe itu pakai firebase
+
+- authController
+di res.cookie httponly
+berarti menyimpan data di cookie pada koneksi http saja
+
+- authController.update
+$set dan new: true
+new true untuk variable yg telah diupdate di db, variableny juga berubah otomatis
+$set untuk handle jika kita hanya ingin update field tertentu tdk semua
+
+- authController {password: pass, ...rest}
+digunakan untuk return semua nilai kecuali pw, karena agar aman

@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './routes/userRoute.js';
 import authRouter from './routes/authRoute.js';
+import listingRouter from './routes/listingRoute.js';
+import cookieParser from 'cookie-parser';
+import path from 'path';
 dotenv.config();
 
 mongoose.connect(process.env.MONGO).then(() => {
@@ -11,9 +14,13 @@ mongoose.connect(process.env.MONGO).then(() => {
     console.log(err);
 });
 
+const __dirname = path.resolve(); // C:\Project\realproject\mernestate\api
+
 const app = express();
 
 app.use(express.json({limit: '10mb'}));
+
+app.use(cookieParser());
 
 app.listen(3000, () => {
     console.log('server is running');
@@ -21,6 +28,13 @@ app.listen(3000, () => {
 
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/listing', listingRouter);
+
+app.use(express.static(path.join(__dirname, '/client/dist'))); //akses dir diclient/dist
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+})
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
