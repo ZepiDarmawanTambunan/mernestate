@@ -1,2 +1,5 @@
+- npm run dev
 - set vite.config.js
 - npm i @reduxjs/toolkit react-redux
+- npm i swiper
+- npm i -D @tailwindcss/line-clamp
